@@ -32,8 +32,8 @@ public class TaskController {
 		return tasksservice.getTaskById(taskId);
 	}
 
-    @DeleteMapping("/deleteTask/{taskId}")
-	public void deleteTask(@PathVariable("taskid") String taskid)
+    @DeleteMapping("/deleteTask")
+	public void deleteTask(@RequestParam("taskid") String taskid)
 	{
 		tasksservice.delete(taskid);
 	}
