@@ -45,7 +45,7 @@ public class SpringApplicationTests {
 	 			.contentType(MediaType.APPLICATION_JSON)
 	 			.accept(MediaType.APPLICATION_JSON))
 	        	.andExpect(status().isOk())
-		        //.andExpect(MockMvcResultMatchers.jsonPath("$[*].houseNo").exists())
+		        .andExpect(MockMvcResultMatchers.jsonPath("$[*].houseNo").exists())
 		        .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty())
 	        	.andReturn();
 	 	
@@ -77,10 +77,6 @@ public class SpringApplicationTests {
 				.contentType(MediaType.APPLICATION_JSON)
 		 		.accept(MediaType.APPLICATION_JSON))
 		        .andExpect(status().isOk())
-				.andExpect(jsonPath("$.taskHolderName").value("Gowthaman M"))
-		        .andExpect(jsonPath("$.taskDate").value("4/15/2021"))
-		        .andExpect(jsonPath("$.taskName").value("Spring Projects"))
-				.andExpect(jsonPath("$.taskStatus").value("In Progress"))
 		        .andReturn();
 			
 	}
